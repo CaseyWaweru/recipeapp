@@ -64,7 +64,7 @@ fun RecipeCard(
             RoundedCornerShape(20.dp)
         )
         .height(height = 170.dp)
-        .padding(end = 20.dp)
+        .padding(end = 14.dp)
         .clickable {
             onClick(recipe.name)
         }

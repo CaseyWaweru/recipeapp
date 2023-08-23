@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -14,19 +15,16 @@ import androidx.compose.ui.unit.sp
 import com.example.recipe_app.ui.theme.GrayColor
 import com.example.recipeapp.models.Recipe
 
-@Composable
-fun RecipeData(
+fun LazyListScope.RecipeData(
     recipe: Recipe,
-    modifier: Modifier
+    modifier: Modifier = Modifier
+        .background(
+            GrayColor,
+            RoundedCornerShape(20.dp)
+        )
+        .padding(20.dp)
 ){
-    Column(
-        modifier = modifier
-            .background(
-                GrayColor,
-                RoundedCornerShape(20.dp)
-            )
-            .padding(20.dp)
-    ) {
+    item {
         Row{
             Column {
                 Text(
@@ -34,7 +32,6 @@ fun RecipeData(
                     fontWeight = FontWeight.Bold,
                     fontSize = 20.sp
                 )
-
             }
         }
     }

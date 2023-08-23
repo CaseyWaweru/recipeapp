@@ -40,11 +40,12 @@ class MainActivity : ComponentActivity() {
                     NavHost(
                         navController = navController,
                         //set the start page of the app
-                        startDestination = "explore_page",
+                        startDestination = "home_page",
                         modifier = Modifier.padding(paddingValues)
                     ){
                         composable("home_page"){
                             HomePageScreen(
+                                modifier = Modifier,
                                 navController = navController
                             )
                         }
@@ -69,7 +70,7 @@ class MainActivity : ComponentActivity() {
                             }
                             RecipeDetailScreen(
                                 recipeName ?: "",
-                                navController
+                                navController = navController
                             )
                         }
                     }
